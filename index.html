@@ -1,0 +1,345 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KLEIT NextView</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="images/Logo 360.png" type="image/Logo 360">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-900">
+
+  <!-- ✅ Header with Logo -->
+  <header class="bg-white/80 backdrop-blur-md shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      
+      <!-- Logo + Site Title -->
+      <div class="flex items-center space-x-3">
+        <!-- Logo Image -->
+        <img src="/images/Logo 360.png" alt="KLEIT Logo" class="h-10 w-10 md:h-12 md:w-12 object-contain drop-shadow-md">
+        <!-- Site Title -->
+        <h1 class="text-xl md:text-2xl font-extrabold 
+                   bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 
+                   bg-clip-text text-transparent tracking-wide">
+          KLEIT NextView
+        </h1>
+      </div>
+      
+      <!-- Navigation -->
+      <nav>
+        <ul class="flex space-x-4 md:space-x-6 text-sm md:text-base font-medium">
+          <li>
+            <a href="#"
+               class="px-3 py-2 rounded-full transition 
+                      hover:bg-blue-600 hover:text-white 
+                      text-gray-700">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="#departments"
+               class="px-3 py-2 rounded-full transition 
+                      hover:bg-blue-600 hover:text-white 
+                      text-gray-700">
+              Departments
+            </a>
+          </li>
+          <li>
+            <a href="#about"
+               class="px-3 py-2 rounded-full transition 
+                      hover:bg-blue-600 hover:text-white 
+                      text-gray-700">
+              About
+            </a>
+          </li>
+          <li>
+            <a href="https://www.kleit.ac.in/contact"
+               class="px-3 py-2 rounded-full transition 
+                      hover:bg-blue-600 hover:text-white 
+                      text-gray-700">
+              Contact
+            </a>
+          </li>
+          <li>
+            <a href="https://www.kleit.ac.in/"
+               target="_blank"
+               class="px-3 py-2 rounded-full transition 
+                      hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 
+                      hover:text-white text-gray-700">
+              College
+            </a>
+          </li>
+        </ul>
+      </nav>
+      
+    </div>
+  </header>
+  
+
+  <!-- ✅ Hero Section -->
+  <section class="relative text-white py-32 px-6 overflow-hidden">
+    <!-- Video Background -->
+    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+      <source src="videos/campus-tour.mp4" type="video/mp4" />
+    </video>
+
+<!-- Overlay -->
+<div class="absolute inset-0 bg-black bg-opacity-65 z-0"></div>
+
+<!-- Content -->
+<div class="relative z-10 text-center max-w-3xl mx-auto mt-12 px-6 py-12 ">
+
+  <!-- Animated Heading -->
+  <h2 class="text-4xl md:text-5xl font-bold mb-6 animate-fadeInUp text-white">
+    Experience KLE Institute of Technology in <span class="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 
+    bg-clip-text text-transparent">360°</span>
+  </h2>
+
+  <!-- Typewriter Effect -->
+  <div class="text-center">
+    <!-- Explore Department -->
+    <p class="text-2xl md:text-3xl font-semibold 
+       bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 
+       bg-clip-text text-transparent mb-2">
+      Explore Department:
+    </p>
+  
+    <!-- Typewriter Text -->
+    <span id="typewriter" 
+          class="block text-2xl md:text-3xl font-semibold text-white border-r-2 border-blue-400 pr-1">
+    </span>
+  </div>
+  
+
+
+  <!-- Animated Paragraph -->
+  <p class="text-lg md:text-xl text-gray-200 mb-8 animate-fadeInUp delay-200">
+    A professional virtual tour showcasing our academic departments, laboratories, and facilities.
+  </p>
+
+  <!-- Animated Button -->
+  <a href="#departments" 
+  class="inline-block bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 
+         text-white font-semibold px-8 py-3 rounded-full shadow-lg 
+         transform transition-all duration-300 hover:scale-105 hover:shadow-pink-500/40 
+         focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2">
+  Explore Departments
+</a>
+ 
+ <a href="#gallery" 
+  class="inline-block bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 
+         text-white font-semibold px-8 py-3 rounded-full shadow-lg 
+         transform transition-all duration-300 hover:scale-105 hover:shadow-pink-500/40 
+         focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2">
+  Explore Campus Gallery
+</a>
+
+</div>
+
+<!-- Typewriter Script -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const departments = [
+      "Masters of Computer Applications",
+      "Computer Science",
+      "Information Technology",
+      "Artificial Intelligence"
+    ];
+    let i = 0, j = 0;
+    const typeSpeed = 150, deleteSpeed = 100, pause = 2000;
+    const typeElement = document.getElementById("typewriter");
+
+    function typeWriter() {
+      if (j < departments[i].length) {
+        typeElement.textContent += departments[i][j];
+        j++;
+        setTimeout(typeWriter, typeSpeed);
+      } else {
+        setTimeout(deleteWriter, pause);
+      }
+    }
+
+    function deleteWriter() {
+      if (j > 0) {
+        typeElement.textContent = departments[i].substring(0, j - 1);
+        j--;
+        setTimeout(deleteWriter, deleteSpeed);
+      } else {
+        // move to next department
+        i = (i + 1) % departments.length; 
+        j = 0; // reset j
+        setTimeout(typeWriter, typeSpeed);
+      }
+    }
+
+    typeWriter();
+  });
+</script>
+
+<!-- Tailwind Keyframes for FadeInUp Animation -->
+<style>
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeInUp { animation: fadeInUp 1s ease-out forwards; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-400 { animation-delay: 0.4s; }
+</style>
+
+  </section>
+
+  <!-- ✅ Departments -->
+  <section id="departments" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-7xl mx-auto text-center">
+      <h3 class="text-3xl md:text-4xl font-semibold 
+      bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 
+      bg-clip-text text-transparent mb-12">Academic Departments</h3>
+
+      <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Department Card -->
+        <div onclick="openTour('MCA')" class="group bg-white border rounded-xl shadow-sm hover:shadow-md transition cursor-pointer">
+          <img src="assets/MCA.webp" alt="Masters of Computer Applications" class="w-full h-48 object-cover rounded-t-xl">
+          <div class="px-6 py-5 text-center">
+            <h4 class="text-xl font-semibold text-blue-700">Masters of Computer Applications</h4>
+            <p class="text-gray-600 mt-2">Virtual tour of the Masters of Computer Applications department</p>
+          </div>
+        </div>
+
+        <div onclick="openTour('Civil')" class="group bg-white border rounded-xl shadow-sm hover:shadow-md transition cursor-pointer">
+          <img src="assets/civil.webp" alt="Civil Engineering" class="w-full h-48 object-cover rounded-t-xl">
+          <div class="px-6 py-5 text-center">
+            <h4 class="text-xl font-semibold text-purple-700">Civil Engineering</h4>
+            <p class="text-gray-600 mt-2">Virtual tour of the Civil Engineering department</p>
+          </div>
+        </div>
+
+        <div onclick="openTour('Mech')" class="group bg-white border rounded-xl shadow-sm hover:shadow-md transition cursor-pointer">
+          <img src="assets/ME.webp" alt="Mechanical Engineering" class="w-full h-48 object-cover rounded-t-xl">
+          <div class="px-6 py-5 text-center">
+            <h4 class="text-xl font-semibold text-indigo-700">Mechanical Engineering</h4>
+            <p class="text-gray-600 mt-2">Virtual tour of the Mechanical department</p>
+          </div>
+        </div>
+
+        <div onclick="openTour('Cs')" class="group bg-white border rounded-xl shadow-sm hover:shadow-md transition cursor-pointer">
+          <img src="assets/Cs.webp" alt="Computer Science" class="w-full h-48 object-cover rounded-t-xl">
+          <div class="px-6 py-5 text-center">
+            <h4 class="text-xl font-semibold text-blue-700">Computer Science</h4>
+            <p class="text-gray-600 mt-2">Virtual tour of the Computer Science department</p>
+          </div>
+        </div>
+
+        <div onclick="openTour('EE')" class="group bg-white border rounded-xl shadow-sm hover:shadow-md transition cursor-pointer">
+          <img src="assets/E&E.webp" alt="Electrical & Electronics" class="w-full h-48 object-cover rounded-t-xl">
+          <div class="px-6 py-5 text-center">
+            <h4 class="text-xl font-semibold text-purple-700">Electrical & Electronics</h4>
+            <p class="text-gray-600 mt-2">Virtual tour of the E&E department</p>
+          </div>
+        </div>
+
+        <div onclick="openTour('Ec')" class="group bg-white border rounded-xl shadow-sm hover:shadow-md transition cursor-pointer">
+          <img src="assets/Ec.webp" alt="Electronics and Communication" class="w-full h-48 object-cover rounded-t-xl">
+          <div class="px-6 py-5 text-center">
+            <h4 class="text-xl font-semibold text-indigo-700">Electronics and Communication Engineering</h4>
+            <p class="text-gray-600 mt-2">Virtual tour of the Electronics and Communication</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ About -->
+  <section id="about" class="bg-white py-20 px-6">
+    <div class="max-w-5xl mx-auto text-center">
+      <h3 class="text-3xl md:text-4xl font-semibold 
+      bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 
+      bg-clip-text text-transparent mb-12">About the Project</h3>
+      <p class="text-lg text-gray-700 leading-relaxed">
+        The KLEIT Virtual Campus Tour is developed to provide students, parents, and visitors with an interactive 360° view of our academic facilities. 
+        Utilizing modern web technologies and panoramic visualizations, this initiative reflects our commitment to innovation and accessibility.
+      </p>
+    </div>
+  </section>
+
+
+    <!-- ✅ Gallery Section -->
+    <section id="gallery" class="bg-gray-50 py-20 px-6">
+      <div class="max-w-7xl mx-auto text-center">
+        <h3 class="text-3xl md:text-4xl font-semibold 
+        bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 
+        bg-clip-text text-transparent mb-12">Campus Gallery</h3>
+  
+        <!-- Gallery Grid -->
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          
+          <!-- Gallery Card 1 -->
+          <div class="relative group rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-500 cursor-pointer">
+             <div onclick="openTour('Canteen')" class="group bg-white border rounded-xl shadow-sm hover:shadow-md transition cursor-pointer">
+              <img src="assets/canteen.webp" alt="Canteen" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500">
+              <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
+                <p class="text-white text-lg font-medium">Cafeteria</p>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Gallery Card 2 -->
+         <div class="relative group rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-500 cursor-pointer">
+            <div onclick="openTour('Library')" class="group bg-white border rounded-xl shadow-sm hover:shadow-md transition cursor-pointer">
+              <img src="assets/Library.webp" alt="Sports Ground" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500">
+              <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
+                <p class="text-white text-lg font-medium">Library</p>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Gallery Card 3 -->
+           <div class="relative group rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-500 cursor-pointer">
+            <div onclick="openTour('Campus')" class="group bg-white border rounded-xl shadow-sm hover:shadow-md transition cursor-pointer">
+              <img src="assets/campus.webp" alt="Campus View" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500">
+               <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
+                <p class="text-white text-lg font-medium">Campus View</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Gallery Card 4 -->
+           <div class="relative group rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-500 cursor-pointer">
+            <div onclick="openTour('sports court')" class="group bg-white border rounded-xl shadow-sm hover:shadow-md transition cursor-pointer">
+              <img src="assets/sports.jpeg" alt="Sports Ground" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500">
+              <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
+                <p class="text-white text-lg font-medium">Sports</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  
+  <!-- ✅ Footer -->
+  <footer id="contact" class="bg-gray-900 text-center py-10 text-gray-400">
+    <p class="text-sm">&copy; 2025 KLE Institute of Technology. All Rights Reserved.</p>
+    <p class="text-sm mt-2">Designed & Developed by <span class="text-blue-400">Rajat Wali(2KE23MC034)</span></p>
+  </footer>
+
+  <!-- ✅ Script -->
+  <script>
+    function openTour(folderName) {
+      window.location.href = `${folderName}/app-files/index.html`;
+    }
+  </script>
+
+</body>
+</html>
